@@ -1,0 +1,434 @@
+Factorial
+• We read n! as “n factorial”
+• n! = n*(n-1)*(n-2)*...*2*1, and that 0! = 1.
+• A recursive definition is
+
+(n)! = {n * (n-1)! if n>0}  Recursive Call
+{1
+if n=0}   Initial Condition
+
+Recursion tree
+• We can draw a recursion tree for any recursive function.
+• Drawing a recursion tree will help us to graphically visualize
+the recursive relation.
+• Let’s draw the recursion tree for the factorial function
+
+
+
+Definition of Recursive Relation
+A recursive relation for the sequence {an} is an equation that
+expresses an in terms of one or more of the previous terms of the
+sequence, for all integers n >= n0, where n0 is a non-negative
+integer.
+• The condition n = n0 is called the initial condition.
+• NOTE: some cases may contain more than one initial condition.
+e.g. Fibonacci numbers
+
+Base case(s).
+• Values of the input variables for which we perform no recursive calls
+are called base cases (there should be at least one base case).
+• Every possible chain of recursive calls must eventually reach a base
+case.
+• Recursive calls.
+• Calls to the current method.
+• Each recursive call should be defined so that it makes progress
+towards a base case.
+
+
+i need you explain(teaches) these answers with steps 
+So question
+The number of bacteria in a colony doubles every hour. If
+the colony begins with 05 bacteria, how many will be present
+in 2 hours?
+Answers (can not have idea to solove this )
+• Recursive relation:
+Let an be the number of bacteria after n hours.
+an = 2.an-1
+Initial condition a0 = 5.
+• Solution: Solve for a2 given this relation.
+a2 = 2*a1 = 2*2*a0 = 2*2*5 = 20
+
+
+The Master Method
+• The Master method applies to recurrences of the form
+T(n) = a T(n/b) + f(n)
+where a ≥ 1 and b > 1, and f(n) is an asymptotically positive function.
+The recurrence describes the running time of an algorithm that divides a
+problem of size n into a sub problems, each of size n/b, where a and b are
+positive constants. The a sub problems are solved recursively, each in time T
+(n/b). The cost of dividing the problem and combining the results of the sub
+problems is described by the function f (n).
+
+
+• Suppose Sunil deposits Rs.10,000 in a savings account at a bank,
+yielding 11% interest per year with interest compounded
+annually. How much will be in the account after 30 years?Solution
+• Solution:
+Let Pn denote the amount in the account after n years. Then the
+sequence {Pn} satisfies the recursive relation:
+Pn = Pn-1 + 0.11 Pn-1 = (1.11)Pn-1
+The initial condition is P0 = 10,000.
+Note that:
+P1 = (1.11)P0
+P2 = (1.11)P1 (That means 1.11*1.11P0) = (1.11)2 P0
+P3 = (1.11)P2 = (1.11)3 P0
+We see a pattern! In general,
+Pn = (1.11)Pn-1 = (1.11)n P0. For n = 30, P30 = (1.11)3010,000.
+
+
+
+Recurrence equation
+• Mathematical function that define the running time of recursive
+functions.
+• This describes the overall running time on a problem of size n in
+terms of the running time on smaller inputs.
+• when an algorithm contains a recursive call to itself, its running
+time can often be described by a recurrence. A recurrence is an
+equation or inequality that describes a function in terms of its
+value on smaller inputs.
+• A recurrence relation for T(N) is simply a recursive
+definition of T(N).
+• This means T(N) is written as a function of T(k) where k < N.
+• Two common types are:
+• T(N) = T(N-1) + b
+• T(N) = T(N/2) + c
+
+
+
+Repeated substitution method(Example 01)
+Example 1:
+T(n) = T(n − 1) + c , n > 1 & c is a small positive constant. :T(1) = d
+T(n) = T(n − 1) + c
+= (T(n − 2) + c) + c
+= (T(n − 2) + 2c
+=(T(n − 3) + c) + 2c
+T(n)= nc + (d − c)
+= (T(n − 3) + 3c
+Running Time : O(n)
+….after k times
+= (T(n − k) + k c
+If k=n-1
+= T(n − (n − 1)) + (n − 1)c
+= T(1) + (n − 1)c
+= d + (n − 1)c
+
+here example for above topic teach me this (having hard time of in mathamatics need to explain small stuff in mathamatics )
+
+
+
+Calculate the running time as Operation count for the following process parts
+
+int i= 10;
+while (i>=2)
+{
+printf(“Hello”);
+i=i-2;
+}
+
+calculate the step count 
+int i= 10;
+while (i>=2)
+{
+printf(“Hello”);
+i=i-2;
+}
+
+INSERTION-SORT(A)
+1 for j 2 to length[A]
+2
+do key  A[ j]
+⊲ Insert A[ j] into the sorted sequence A[1..j-1]
+3
+ij–1
+4
+while i > 0 and A[i] > key
+5
+do A[i+1]  A[i]
+6
+i i-1
+7
+A[i+1]  key
+
+. Illustrate the operation of the Insertion sort on the array A=< 33, 24,16,12 >
+
+
+
+Hi! I’m currently learning Design and Analysis of Algorithms (DAA) for university.
+
+My lecture notes are often written in bullet/point form only, and the actual explanations are given in class — which I sometimes miss or struggle to fully grasp.
+
+I want you to act like a university-level DAA teacher and help me understand the meaning and importance of each point or concept in a clear and structured way.
+
+🔽 Here's what I expect from your explanation:
+
+    Explain the concepts just like a professor would in class
+
+    Use simple language first, then expand if needed
+
+    If an example or illustration will make it easier to understand, please add it
+
+    Keep it focused and clear — not just textbook definitions
+    
+    
+#Asymptotic Notations
+Asymptotic notations are the mathematical notations used to
+describe the running time of an algorithm. It used when the input
+tends towards a particular value or a limiting value.
+Why we need of Asymptotic Notation?
+ Ignore machine dependent constants.
+ RAM Model have some problems.
+ Exact analysis is very complicated
+ Sufficiently large size of n.
+ Growth of T(n) as n --> ∞
+
+
+Asymptotic Notations (Cont.)
+
+Step count is determined to be
+c1n2 +c2n + c3,
+Let’s take the ratio 𝑟 𝑛
+c1> 0
+𝑐2 𝑛+𝑐3
+=
+𝑐1 𝑛2
+r(n)
+When n is large r(n)
+tends to zero.
+
+Suppose that programs A and B perform the same task.
+Assume that one person has determined the step counts of
+these programs to be t A(n)=2n2+3n and t B(n)=13n.
+ Which program is the faster one ?
+ What is the answer ,if the step count of the program B is
+2n+n2 ?
+
+#Graphs of functions
+Nn>n! >2n>n3 > n2 > n log a > n > log n > 1
+#Asymptotic Notations(Contd.)
+There are three notations.
+O - Notation
+ - Notation
+ - Notation
+
+ Focus on what’s important by abstracting away low-order
+terms and constant factors.
+ How we indicate running times of algorithms.
+ A way to compare “sizes” of functions:
+ O ≈ ≤ -- Consider the Upper Bound
+•  ≈ ≥ --Consider the Both(Average)
+•  ≈ = -- Consider the Lower Boun
+
+
+#Big O - Notation
+ Introduced by Paul Bechman in 1892.
+ We use Big O-notation to give an upper bound on a
+function. And consider as the Worst Case Scenarios.
+Definition:
+Eg: What is the big O value of f(n)=2n + 6 ?
+g(n)=n therefore f(n)=O(n)
+an xn + ... + a1 x + a0 is O( xn ) for any real numbers an , ..., a0
+and any nonnegative number n
+
+Assignment (s 1)
+Addition (s+1)
+Multiplication (s*2)
+Comparison (S<10)
+
+#Find the Big Oh value for following fragment of code.
+for i  1 to n ----------------- n Times
+for j  1 to i ----------------- (n-1) Times
+Print j ----------------- (n-2) Times
+n * (n2−3n+2)=n3−3n2+2n
+O(n3)
+
+#Find the Big O value for the following functions.
+(i) T(n)= 3 +5n + 3n2
+(ii) f(n)= 2n + n2 +8n +7
+(iii) T(n)= n + logn +6
+Answers:
+(i) O(n2)
+(ii) O(2n)
+(iii) O(n)
+
+#Back to the example
+Alternative calculation:
+sum  0
+for i  1 to n
+sum  sum  A[i]
+costtimes
+c11
+c2n+1
+c3n
+T(n) = c1 + c2 (n+1) + c3 n = (c1 + c2) + (c2 + c3) n = c4 + c5 n
+ O (n)
+Proof: c4 + c5 n ≤ c n  TRUE for n≥1 and c ≥ c4 + c5
+
+
+
+Buffer Pool (RAM)
+
+Frame No-1
+Page ID-Page23
+Pin count-2
+Dirty bit-1
+Frame No-2
+Page ID-
+Pin count-0
+Dirty bit-0
+
+Frame No-3
+Page ID-Page6
+Pin count-2
+Dirty bit-1
+
+Frame No-4
+Page ID-Page8
+Pin count-1
+Dirty bit-0
+
+Frame No-5
+Page ID-Page23
+Pin count-0
+Dirty bit-1
+
+Frame No-6
+Page ID-Page13
+Pin count-1
+Dirty bit-0
+
+Frame No-7
+Page ID-Page9
+Pin count-9
+Dirty bit-1
+
+Frame No-8
+Page ID-Page67
+Pin count-0
+Dirty bit-0
+
+Frame No-9
+Page ID-Page4
+Pin count-1
+Dirty bit-1
+
+
+Frame No-10
+Page ID-Page25
+Pin count-1
+Dirty bit-1
+
+xplain the steps followed by buffer manager in the following scenarios.
+        (iv). After brining page 7, next User program request for page ID 24. Buffer manager selects the frame 8 for replacement
+        (v). After brining page 7, next User program request for page ID 9.
+
+
+
+
+    d) Explain the steps followed by buffer manager in the following scenarios.
+        (i). User program request for page ID 8. 
+        (ii). User program request for page ID 7. 
+        
+        
+        
+#Hash Files
+
+• Search (Equality): good for equality (if based on
+search key). Otherwise scan table
+• Search (Range): needs to scan the file
+• Insert: search for primary bucket (hash) and insert
+• Delete: search for primary bucket (hash) if available,
+else scan file & delete record
+• Hash File is an Indexed File
+• Hash indexes are best for equality selections.
+• Do not support range searches.
+1. Static Hashing
+2. Dynamic hashing
+
+
+
+is these steps true ?
+Step-by-step Process:
+Let’s say we want to insert a record with some key (like student_id, employee_id, etc.).
+
+🔢 Example:
+Let’s insert a record with key = 37
+
+We are using:
+
+A hash function:
+
+ℎ
+(
+𝑘
+𝑒
+𝑦
+)
+=
+𝑘
+𝑒
+𝑦
+m
+o
+d
+ 
+ 
+𝑁
+h(key)=keymodN
+Suppose N = 4 (we have 4 buckets: 0, 1, 2, 3)
+
+✅ Step 1: Apply Hash Function
+ℎ
+(
+37
+)
+=
+37
+m
+o
+d
+ 
+ 
+4
+=
+1
+h(37)=37mod4=1
+🔍 So, this record should be stored in Bucket 1.
+
+✅ Step 2: Check the Target Bucket (Bucket 1)
+If there is enough space in Bucket 1:
+→ Just insert the record there.
+
+If Bucket 1 is full:
+→ Add an overflow page linked to Bucket 1, and insert the record into that overflow page.
+
+📝 This page acts like a backup stack for records that couldn’t fit into the main bucket.
+
+
+
+
+is Alternative 1: shoted using index or age or salary 
+
+as example this 
+| ID | Name     | Age |
+|----|----------|-----|
+| 5  | marti	| 23  |
+| 4  | Alex     | 22  |
+| 6  | Rachel   | 25  |
+
+
+
+Sequential file
+Heap
+
+Consider a disk with a sector size of 256 bytes, block size of 768 bytes, 200 tracks per surface, 100 sectors per track and 2 single-sided platters. The disk is spinning at a speed of 4000 rpm. You need to store an AnimalDetails file which contains 5000 records. A record is 256 bytes which is in fixed-length format. Assume that no record spans multiple blocks.
+*first explain given terms before answer question 
+1. How many records can be stored in a block in the above disk. Calculate and write the final answer
+2. How many records can be stored in a single track? Calculate and write the final answer.
+4. How many cylinders are needed to store the entire file? Calculate and write the final answer. 
+5. What is the time required to transfer a track of data from the above disk? Do not consider the seek time. Calculate and write the final answer.(2 marks)
+
+Answer 5 Question 4
+
+6. Assuming that the data in the above disk are stored using the Next Block concept, what would be the time taken to read the entire file from the disk. Calculate and write the final answe
+
+
